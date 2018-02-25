@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version          = '2.0.0'
   s.summary          = 'The only library you hope to remove! This library helps you remember about things done bad.'
 
-  s.homepage         = 'https://shitlib.github.io'
+  s.homepage         = 'https://github.com/ShitLib/shitlib-swift'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'artemisia-absynthium' => 'cristina.derito@outlook.com' }
   s.source           = { :git => 'https://github.com/ShitLib/shitlib-swift.git', :tag => s.version.to_s }
