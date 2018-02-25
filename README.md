@@ -1,6 +1,6 @@
 # ShitLib (oh Shit!)
 
-[![CI Status](http://img.shields.io/travis/artemisia-absynthium/ShitLib.svg?style=flat)](https://travis-ci.org/artemisia-absynthium/ShitLib)
+[![Build Status](https://travis-ci.org/ShitLib/shitlib-swift.svg?branch=master)](https://travis-ci.org/ShitLib/shitlib-swift)
 [![Version](https://img.shields.io/cocoapods/v/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
 [![License](https://img.shields.io/cocoapods/l/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
 [![Platform](https://img.shields.io/cocoapods/p/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
@@ -38,7 +38,7 @@ class MyBeautifulClass {
     let elements: [String] = [**some elements inside**]
 
 
-    func iDontWantDoThisButWeMustReleaseASAP() {
+    func iDontWantToDoThisButWeMustReleaseASAP() {
         let element = elements[OhShit._0] // <--- OhShit Constant
         doSomeThing(with: element)
     }
