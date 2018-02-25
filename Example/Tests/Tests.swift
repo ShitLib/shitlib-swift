@@ -58,4 +58,5 @@ class TableOfContentsSpec: QuickSpec {
             }
         }
     }
+
 }

@@ -46,7 +46,7 @@ class MyBeautifulClass {
 
 
     func iDontWantToDoThisButWeMustReleaseASAP() {
-        let element = elements[OhShit._0] // <--- OhShit Constant
+        let element = elements[OhShit.os0] // <--- OhShit Constant
         doSomeThing(with: element)
     }
 
