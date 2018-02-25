@@ -4,6 +4,7 @@
 [![Version](https://img.shields.io/cocoapods/v/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
 [![License](https://img.shields.io/cocoapods/l/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
 [![Platform](https://img.shields.io/cocoapods/p/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6834a8edbf724e7683c26374da3d6548)](https://www.codacy.com/app/artemisia-absynthium/shitlib-swift?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ShitLib/shitlib-swift&amp;utm_campaign=Badge_Grade)
 
 ## Installation
 
