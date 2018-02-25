@@ -65,7 +65,7 @@ class MyBeautifulUnconfigurableClass {
 
 
     enum PasswordError: Error {
-        case lenght(maxLength: Int)
+        case length(maxLength: Int)
     }
 
     let maxPasswordSize: Int = OhShit.ohShit(7)! // I cannot parameterize now
@@ -73,7 +73,7 @@ class MyBeautifulUnconfigurableClass {
 
     public func set(password: String) throws {
         if password.count > maxPasswordSize {
-            throw PasswordError.lenght(maxLength: maxPasswordSize)
+            throw PasswordError.length(maxLength: maxPasswordSize)
         }
     }
 
