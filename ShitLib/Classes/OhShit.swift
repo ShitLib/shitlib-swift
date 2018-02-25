@@ -1,19 +1,19 @@
 public class OhShit {
 
 
-    public static let _null: Any? = nil
-    public static let _empty = ""
+    public static let osNull: Any? = nil
+    public static let osEmpty = ""
 
-    public static let _true = true
-    public static let _false = false
+    public static let osTrue = true
+    public static let osFalse = false
 
-    public static let N_1 = -1
-    public static let _0 = 0
-    public static let _1 = 1
+    public static let osN1 = -1
+    public static let os0 = 0
+    public static let os1 = 1
 
-    public static let N_1I64: Int64 = -1
-    public static let _0I64: Int64 = 0
-    public static let _1I64: Int64 = 1
+    public static let osN1I64: Int64 = -1
+    public static let os0I64: Int64 = 0
+    public static let os1I64: Int64 = 1
 
 
     private init() {}
