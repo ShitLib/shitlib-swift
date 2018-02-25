@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'ShitLib/Classes/**/*'
 
-  s.swift_version = '4'
+  s.swift_version = '4.0'
 end
