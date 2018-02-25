@@ -16,9 +16,9 @@ pod 'ShitLib'
 
 ## Requirements
 
-iOS 8.0
-OS X 10.10
-tvOS 9.0
+iOS 8.0  
+OS X 10.10  
+tvOS 9.0  
 watchOS 2.0
 
 ## The only library you hope to remove!
