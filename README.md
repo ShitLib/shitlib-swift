@@ -14,6 +14,13 @@ it, simply add the following line to your Podfile:
 pod 'ShitLib'
 ```
 
+## Requirements
+
+iOS 8.0
+OS X 10.10
+tvOS 9.0
+watchOS 2.0
+
 ## The only library you hope to remove!
 
 The library that helps you remember about things done bad.
