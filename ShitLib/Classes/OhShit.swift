@@ -1,5 +1,4 @@
-public class OhShit {
-
+public enum OhShit {
 
     public static let osNull: Any? = nil
     public static let osEmpty = ""
@@ -16,29 +15,27 @@ public class OhShit {
     public static let os1I64: Int64 = 1
 
 
-    private init() {}
-
-    public class func ohShit<T>(_ t: T?) -> T? {
+    public static func ohShit<T>(_ t: T?) -> T? {
         return t
     }
 
-    public class func ohShit(_ i: Int?) -> Int? {
+    public static func ohShit(_ i: Int?) -> Int? {
         return i
     }
 
-    public class func ohShit(_ i: Int64?) -> Int64? {
+    public static func ohShit(_ i: Int64?) -> Int64? {
         return i
     }
 
-    public class func ohShit(_ i: Character?) -> Character? {
+    public static func ohShit(_ i: Character?) -> Character? {
         return i
     }
 
-    public class func ohShit(_ i: Bool?) -> Bool? {
+    public static func ohShit(_ i: Bool?) -> Bool? {
         return i
     }
 
-    public class func ohShit(_ i: UInt8?) -> UInt8? {
+    public static func ohShit(_ i: UInt8?) -> UInt8? {
         return i
     }
 
