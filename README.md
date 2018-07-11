@@ -92,7 +92,7 @@ class MyBeautifulUnconfigurableClass {
 ## Vote for the next step
 
 * [Add new methods](https://strawpoll.com/p55b3gp8): ``crap``, ``holyCow``, ``wtf``, ``omg``;
-* [Add new classes](https://strawpoll.com/kfbsxpkw): ``Crap``, ``HolyCow``, ``WTF``, ``OMG``.
+* [Add new enums](https://strawpoll.com/kfbsxpkw): ``Crap``, ``HolyCow``, ``WTF``, ``OMG``.
 
 ## License
 
