@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'ShitLib'
-  s.version          = '2.0.0'
+  s.version          = '3.0.0'
   s.summary          = 'The only library you hope to remove! This library helps you remember about things done bad.'
 
   s.homepage         = 'https://github.com/ShitLib/shitlib-swift'
@@ -15,5 +15,5 @@ Pod::Spec.new do |s|
 
   s.source_files = 'ShitLib/Classes/**/*'
 
-  s.swift_version = '4.0'
+  s.swift_version = '4.1'
 end
