@@ -1,0 +1,27 @@
+PODS:
+  - Nimble (7.0.3)
+  - Quick (1.2.0)
+  - ShitLib (3.1.0)
+
+DEPENDENCIES:
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
+  - ShitLib (from `../`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Nimble
+    - Quick
+
+EXTERNAL SOURCES:
+  ShitLib:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Nimble: 7f5a9c447a33002645a071bddafbfb24ea70e0ac
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+  ShitLib: d692b0a6d42ab22546e5a92d3c9c083e0f6d1726
+
+PODFILE CHECKSUM: 2a34d9e66f767830b7fb9a32ae95229e8b58991b
+
+COCOAPODS: 1.5.3

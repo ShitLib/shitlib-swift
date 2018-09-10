@@ -1,0 +1,6 @@
+framework module ShitLib {
+  umbrella header "ShitLib-umbrella.h"
+
+  export *
+  module * { export * }
+}
