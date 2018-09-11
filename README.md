@@ -1,12 +1,12 @@
 # ShitLib (oh Shit!)
 
 [![Build Status](https://travis-ci.org/ShitLib/shitlib-swift.svg?branch=master)](https://travis-ci.org/ShitLib/shitlib-swift)
-[![Version](https://img.shields.io/cocoapods/v/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
 [![License](https://img.shields.io/cocoapods/l/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
 [![Platform](https://img.shields.io/cocoapods/p/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/6834a8edbf724e7683c26374da3d6548)](https://www.codacy.com/app/artemisia-absynthium/shitlib-swift?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ShitLib/shitlib-swift&amp;utm_campaign=Badge_Grade)
-[![Join the chat at https://gitter.im/ShitLib/shitlib-swift](https://badges.gitter.im/ShitLib/shitlib-swift.svg)](https://gitter.im/ShitLib/shitlib-swift?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Version](https://img.shields.io/cocoapods/v/ShitLib.svg?style=flat)](http://cocoapods.org/pods/ShitLib)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Join the chat at https://gitter.im/ShitLib/shitlib-swift](https://badges.gitter.im/ShitLib/shitlib-swift.svg)](https://gitter.im/ShitLib/shitlib-swift?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## Installation
 
