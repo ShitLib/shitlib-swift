@@ -1,7 +1,0 @@
-use_frameworks!
-target 'ShitLib_Tests' do
-  pod 'ShitLib', :path => '../'
-  
-  pod 'Quick', '~> 1.2.0'
-    pod 'Nimble', '~> 7.0.2'
-end
