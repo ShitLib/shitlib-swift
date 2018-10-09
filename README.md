@@ -16,7 +16,7 @@ ShitLib is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your `Podfile`:
 
 ```ruby
-pod 'ShitLib', '~> 3.0'
+pod 'ShitLib', '~> 4.0'
 ```
 
 ### Carthage
@@ -24,13 +24,21 @@ pod 'ShitLib', '~> 3.0'
 ShitLib is compatible with [Carthage](https://github.com/Carthage/Carthage). To use it, add the following line to your `Cartfile`:
 
 ```ruby
-github "ShitLib/shitlib-swift" ~> 3.0.0
+github "ShitLib/shitlib-swift" ~> 4.0.0
+```
+
+### Swift Package Manager
+
+ShitLib is compatible with [Swift Package Manager](https://swift.org/package-manager). To use it, add the following as a dependency to your `Package.swift` file:
+
+```swift
+.package(url: "https://github.com/ShitLib/shitlib-swift.git", .upToNextMajor(from: "4.0.0"))
 ```
 
 ## Requirements
 
 iOS 8.0  
-OS X 10.10  
+OS X 10.9  
 tvOS 9.0  
 watchOS 2.0
 
@@ -101,10 +109,9 @@ class MyBeautifulUnconfigurableClass {
 }
 ```
 
-## Vote for the next step
+## What's new?
 
-* [Add new methods](https://strawpoll.com/p55b3gp8): ``crap``, ``holyCow``, ``wtf``, ``omg``;
-* [Add new enums](https://strawpoll.com/kfbsxpkw): ``Crap``, ``HolyCow``, ``WTF``, ``OMG``.
+Checkout our [changelog](https://github.com/ShitLib/shitlib-swift/blob/master/CHANGELOG.md).
 
 ## License
 
