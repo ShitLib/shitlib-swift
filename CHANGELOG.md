@@ -6,14 +6,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [4.0.0] - 2018-10-09
 ### Added
-- Add support for Swift Package Manager
+- Added support for Swift Package Manager
 
 ### Changed
 - Use standard Swift project structure to improve compatibility with dependency managers and CI tools.
 
 ## [3.1.0] - 2018-09-11
 ### Added
-- Add support for Carthage
+- Added support for Carthage
 
 ## [3.0.0] - 2014-08-09
 ### Changed
@@ -27,7 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 - Library
 - Tests with 100% coverage
-- Add support for CocoaPods
+- Added support for CocoaPods
 
 [4.0.0]: https://github.com/ShitLib/shitlib-swift/compare/3.1.0...4.0.0
 [3.1.0]: https://github.com/ShitLib/shitlib-swift/compare/3.0.0...3.1.0
