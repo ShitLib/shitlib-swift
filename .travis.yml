@@ -1,10 +1,9 @@
 language: objective-c
-xcode_workspace: Example/ShitLib.xcworkspace
-xcode_scheme: ShitLib-Example
-xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone X
-podfile: Example/Podfile
-script:
-  - pod lib lint
+osx_image: xcode10
+xcode_project: ShitLib.xcodeproj
+xcode_scheme: ShitLib iOS
+xcode_destination: platform=iOS Simulator,OS=12.0,name=iPhone XS
 after_success:
-  - cd Example
-  - bash <(curl -s https://codecov.io/bash) -J 'ShitLib-Example'
+  - bash <(curl -s https://codecov.io/bash)
+  - gem install cocoapods --pre
+  - pod lib lint
