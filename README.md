@@ -1,5 +1,6 @@
 # ShitLib (oh Shit!)
 
+[![Swift](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml/badge.svg)](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml)
 [![Join the chat at https://gitter.im/ShitLib/shitlib-swift](https://badges.gitter.im/ShitLib/shitlib-swift.svg)](https://gitter.im/ShitLib/shitlib-swift?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## The only library you hope to remove!
@@ -50,7 +51,6 @@ class MyBeautifulUnconfigurableClass {
     }
 
     let maxPasswordSize: Int = OhShit.ohShit(7)! // I cannot parameterize now
-
 
     public func set(password: String) throws {
         if password.count > maxPasswordSize {
