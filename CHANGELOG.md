@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Use standard Swift Package structure to be more lightweight and more Xcode syntax coloring and autocomplete friendly.
 
 ### Removed
-- Removed support to CocoaPods and Carthage, SwiftPM is now mature enough for production and it's the official and preferred package manager. CocoaPods and Carthage can still be used, if needed, by importing version 4.0.0, since no API has changed.
+- Support for CocoaPods and Carthage has been discontinued, Swift Package Manager is now mature enough for production and it's the official and preferred package manager. CocoaPods and Carthage can still be used, if needed, by importing version 4.0.0, since no API has changed.
 
 ## [4.0.0] - 2018-10-09
 ### Added
