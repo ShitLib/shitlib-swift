@@ -6,7 +6,6 @@
 //
 
 public enum OhShit {
-
     public static let osNull: Any? = nil
     public static let osEmpty = ""
 
@@ -45,6 +44,4 @@ public enum OhShit {
     public static func ohShit(_ i: UInt8?) -> UInt8? {
         return i
     }
-
-
 }
