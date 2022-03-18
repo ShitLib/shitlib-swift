@@ -17,8 +17,3 @@ jobs:
       run: swift build -v
     - name: Run tests
       run: swift test -v
-    - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v1.6
-      env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
