@@ -2,7 +2,7 @@
 
 [![Swift](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml/badge.svg)](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ShitLib_shitlib-swift&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ShitLib_shitlib-swift)
-[![codecov](https://codecov.io/gh/ShitLib/shitlib-swift/branch/master/graph/badge.svg?token=WqSvdoVifd)](https://codecov.io/gh/ShitLib/shitlib-swift)
+[![codecov](https://codecov.io/gh/ShitLib/shitlib-swift/branch/main/graph/badge.svg?token=WqSvdoVifd)](https://codecov.io/gh/ShitLib/shitlib-swift)
 [![Join the chat at https://gitter.im/ShitLib/shitlib-swift](https://badges.gitter.im/ShitLib/shitlib-swift.svg)](https://gitter.im/ShitLib/shitlib-swift?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ## The only library you hope to remove!
