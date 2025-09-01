@@ -5,55 +5,56 @@
 //  Created by Cristina De Rito on 08/10/2018.
 //
 
-import XCTest
+import Testing
 @testable import ShitLib
 
-final class ShitLibTests: XCTestCase {
+@Suite("ShitLibTests")
+struct ShitLibTests {
     private class MyClass {}
     
-    func testIsNotNil() throws {
+    @Test func testIsNotNil() throws {
         let a: MyClass? = MyClass()
-        XCTAssertNotNil(OhShit.ohShit(a), "ohShit is nil")
+        try #require(OhShit.ohShit(a) != nil, "ohShit is nil")
     }
 
-    func testIsNil() throws {
+    @Test func testIsNil() throws {
         let a: MyClass? = nil
-        XCTAssertNil(OhShit.ohShit(a), "ohShit is not nil")
+        try #require(OhShit.ohShit(a) == nil, "ohShit is not nil")
     }
 
-    func testIsTheSameInt() throws {
+    @Test func testIsTheSameInt() throws {
         let ohShit1 = OhShit.ohShit(1)
-        XCTAssertNotNil(ohShit1, "ohShitInt is nil")
-        XCTAssertEqual(ohShit1, 1, "ohShitInt is not 1")
+        try #require(ohShit1 != nil, "ohShitInt is nil")
+        try #require(ohShit1 == 1, "ohShitInt is not 1")
     }
 
-    func testIsTheSameByte() throws {
+    @Test func testIsTheSameByte() throws {
         let ohShitByte1 = OhShit.ohShit(UInt8(1))
-        XCTAssertNotNil(ohShitByte1, "ohShitByte is nil")
-        XCTAssertEqual(ohShitByte1, UInt8(1), "ohShitByte is not UInt8(1)")
+        try #require(ohShitByte1 != nil, "ohShitByte is nil")
+        try #require(ohShitByte1 == UInt8(1), "ohShitByte is not UInt8(1)")
     }
 
-    func testIsTheSameLong() throws {
+    @Test func testIsTheSameLong() throws {
         let ohShitLong1 = OhShit.ohShit(Int64(1))
-        XCTAssertNotNil(ohShitLong1, "ohShitLong is nil")
-        XCTAssertEqual(ohShitLong1, Int64(1), "ohShitLong is not Int64(1)")
+        try #require(ohShitLong1 != nil, "ohShitLong is nil")
+        try #require(ohShitLong1 == Int64(1), "ohShitLong is not Int64(1)")
     }
 
-    func testIsTheSameBool() throws {
+    @Test func testIsTheSameBool() throws {
         let ohShitBool = OhShit.ohShit(true)
-        XCTAssertNotNil(ohShitBool, "ohShitBool is nil")
-        XCTAssertEqual(ohShitBool, true, "ohShitBool is not true")
+        try #require(ohShitBool != nil, "ohShitBool is nil")
+        try #require(ohShitBool == true, "ohShitBool is not true")
     }
 
-    func testIsTheSameString() throws {
+    @Test func testIsTheSameString() throws {
         let ohShitString = OhShit.ohShit("a string")
-        XCTAssertNotNil(ohShitString, "ohShitString is nil")
-        XCTAssertEqual(ohShitString, "a string", "ohShitString is not \"a string\"")
+        try #require(ohShitString != nil, "ohShitString is nil")
+        try #require(ohShitString == "a string", "ohShitString is not \"a string\"")
     }
 
-    func testIsTheSameCharacter() throws {
+    @Test func testIsTheSameCharacter() throws {
         let ohShitCharacter = OhShit.ohShit(Character("A"))
-        XCTAssertNotNil(ohShitCharacter, "ohShitCharacter is nil")
-        XCTAssertEqual(ohShitCharacter, Character("A"), "ohShitCharacter is not Character(\"A\")")
+        try #require(ohShitCharacter != nil, "ohShitCharacter is nil")
+        try #require(ohShitCharacter == Character("A"), "ohShitCharacter is not Character(\"A\")")
     }
 }
