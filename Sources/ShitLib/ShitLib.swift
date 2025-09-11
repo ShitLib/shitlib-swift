@@ -6,7 +6,7 @@
 //
 
 public enum OhShit {
-    public static let osNull: Any? = nil
+    public static let osNull: (any Sendable)? = nil
     public static let osEmpty = ""
 
     public static let osTrue = true
@@ -19,7 +19,6 @@ public enum OhShit {
     public static let osN1I64: Int64 = -1
     public static let os0I64: Int64 = 0
     public static let os1I64: Int64 = 1
-
 
     public static func ohShit<T>(_ t: T?) -> T? {
         return t

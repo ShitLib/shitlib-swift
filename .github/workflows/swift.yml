@@ -2,9 +2,9 @@ name: Swift
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
 
 jobs:
   build:
@@ -12,13 +12,13 @@ jobs:
     runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v5
     - name: Build
       run: swift build -v
     - name: Run tests
       run: swift test -v --enable-code-coverage
     - name: Export coverage report as Lcov
-      run: xcrun llvm-cov export -format="lcov" -instr-profile=.build/x86_64-apple-macosx/debug/codecov/default.profdata .build/x86_64-apple-macosx/debug/ShitLibPackageTests.xctest/Contents/MacOS/ShitLibPackageTests > lcov.info
-    - uses: codecov/codecov-action@v2
+      run: xcrun llvm-cov export -format="lcov" -instr-profile=.build/arm64-apple-macosx/debug/codecov/default.profdata .build/arm64-apple-macosx/debug/ShitLibPackageTests.xctest/Contents/MacOS/ShitLibPackageTests > lcov.info
+    - uses: codecov/codecov-action@v5
       with:
         files: lcov.info

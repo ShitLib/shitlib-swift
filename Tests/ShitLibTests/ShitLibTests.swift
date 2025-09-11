@@ -11,7 +11,7 @@ import Testing
 @Suite("ShitLibTests")
 struct ShitLibTests {
     private class MyClass {}
-    
+
     @Test func testIsNotNil() throws {
         let a: MyClass? = MyClass()
         try #require(OhShit.ohShit(a) != nil, "ohShit is nil")
