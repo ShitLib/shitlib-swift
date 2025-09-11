@@ -1,6 +1,6 @@
 # ShitLib (oh Shit!)
 
-[![Swift](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml/badge.svg)](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml)
+[![Swift CI](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml/badge.svg)](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml?branch=main)
 [![codecov](https://codecov.io/gh/ShitLib/shitlib-swift/branch/main/graph/badge.svg?token=WqSvdoVifd)](https://codecov.io/gh/ShitLib/shitlib-swift)
 [![Join the chat at https://gitter.im/ShitLib/shitlib-swift](https://badges.gitter.im/ShitLib/shitlib-swift.svg)](https://gitter.im/ShitLib/shitlib-swift?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -65,39 +65,19 @@ class MyBeautifulUnconfigurableClass {
 
 ### Swift Package Manager
 
-ShitLib is compatible with [Swift Package Manager](https://swift.org/package-manager). To use it, add the following as a dependency to your `Package.swift` file:
+#### Using Xcode UI
+
+Go to your Project Settings > Swift Packages and add Arachne by entering `https://github.com/ShitLib/shitlib-swift.git` in the search field.
+
+#### Not using Xcode UI
+
+Add the following as a dependency to your `Package.swift`:
 
 ```swift
-.package(url: "https://github.com/ShitLib/shitlib-swift.git", .upToNextMajor(from: "5.0.0"))
+.package(url: "https://github.com/ShitLib/shitlib-swift.git", .upToNextMajor(from: "6.0.0"))
 ```
 
-### Other package managers
-
-Since version 5.0.0, support for CocoaPods and Carthage has been discontinued, if you need to use them for any reason, you can use version 4.0.0, since the API isn't changed.
-
-<details><summary>CocoaPods</summary>
-<p>
-
-ShitLib till version 4.0.0 is available through [CocoaPods](http://cocoapods.org). To install it, simply add the following line to your `Podfile`:
-
-```ruby
-pod 'ShitLib', '~> 4.0'
-```
-
-</p>
-</details>
-
-<details><summary>Carthage</summary>
-<p>
-
-ShitLib till version 4.0.0 is compatible with [Carthage](https://github.com/Carthage/Carthage). To use it, add the following line to your `Cartfile`:
-
-```ruby
-github "ShitLib/shitlib-swift" ~> 4.0.0
-```
-
-</p>
-</details>
+and then specify "ShitLib" as a dependency of the Target in which you wish to use it.
 
 ## What's new
 

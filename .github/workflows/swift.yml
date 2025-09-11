@@ -1,4 +1,4 @@
-name: Swift
+name: Swift CI
 
 on:
   push:
@@ -6,19 +6,23 @@ on:
   pull_request:
     branches: [ main, develop ]
 
+permissions:
+  contents: read
+
 jobs:
-  build:
-
+  test-and-coverage:
+    name: Test and Coverage
     runs-on: macos-latest
-
     steps:
     - uses: actions/checkout@v5
-    - name: Build
-      run: swift build -v
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '26.0-beta'
     - name: Run tests
       run: swift test -v --enable-code-coverage
     - name: Export coverage report as Lcov
-      run: xcrun llvm-cov export -format="lcov" -instr-profile=.build/arm64-apple-macosx/debug/codecov/default.profdata .build/arm64-apple-macosx/debug/ShitLibPackageTests.xctest/Contents/MacOS/ShitLibPackageTests > lcov.info
+      run: xcrun llvm-cov export -format="lcov" -instr-profile=.build/arm64-apple-macosx/debug/codecov/default.profdata .build/arm64-apple-macosx/debug/ArachnePackageTests.xctest/Contents/MacOS/ArachnePackageTests > lcov.info
     - uses: codecov/codecov-action@v5
       with:
+        token: ${{ secrets.CODECOV_TOKEN }}
         files: lcov.info

@@ -1,0 +1,23 @@
+name: SwiftLint
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+permissions:
+  contents: read
+
+jobs:
+  swiftlint:
+    name: SwiftLint
+    runs-on: macos-latest
+    steps:
+    - uses: actions/checkout@v5
+    - name: Install SwiftLint
+      run: brew install swiftlint
+    - name: Lint Sources
+      run: swiftlint lint --strict --working-directory Sources
+    - name: Lint Tests
+      run: swiftlint lint --strict --working-directory Tests
