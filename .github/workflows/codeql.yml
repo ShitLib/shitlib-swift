@@ -64,6 +64,9 @@ jobs:
     # or others). This is typically only required for manual builds.
     # - name: Setup runtime (example)
     #   uses: actions/setup-example@v1
+    - uses: maxim-lobanov/setup-xcode@v1
+      with:
+        xcode-version: '26.0-beta'
 
     # Initializes the CodeQL tools for scanning.
     - name: Initialize CodeQL
@@ -86,7 +89,7 @@ jobs:
     # ℹ️ Command-line programs to run using the OS shell.
     # 📚 See https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_idstepsrun
     - if: matrix.build-mode == 'manual'
-      run: swift build -v --enable-experimental-prebuilts
+      run: swift build -v
 
     - name: Perform CodeQL Analysis
       uses: github/codeql-action/analyze@v3
