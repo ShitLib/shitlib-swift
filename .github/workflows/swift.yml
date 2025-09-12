@@ -1,24 +1,84 @@
-name: Swift
+name: Swift CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, develop ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, develop ]
+
+permissions:
+  contents: read
 
 jobs:
-  build:
-
+  test-and-coverage:
+    name: Test and Coverage (${{ matrix.platform }})
     runs-on: macos-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: "macOS"
+            destination: "platform=macOS,arch=arm64"
+            device: "My Mac"
+          - platform: "iOS"
+            destination: "platform=iOS Simulator"
+            device: "iPhone"
+          - platform: "tvOS"
+            destination: "platform=tvOS Simulator"
+            device: "Apple TV"
+          - platform: "watchOS"
+            destination: "platform=watchOS Simulator"
+            device: "Apple Watch"
+          - platform: "visionOS"
+            destination: "platform=visionOS Simulator"
+            device: "Apple Vision"
+          - platform: "macCatalyst"
+            destination: "platform=macOS,variant=Mac Catalyst"
+            device: "My Mac"
+
     steps:
-    - uses: actions/checkout@v2
-    - name: Build
-      run: swift build -v
-    - name: Run tests
-      run: swift test -v --enable-code-coverage
+    - uses: actions/checkout@v5
+
+    - name: Run tests on ${{ matrix.platform }}
+      run: |
+        # Determine full destination specifier
+        DEST="${{ matrix.destination }}"
+        if [[ "${{ matrix.platform }}" != "macOS" && "${{ matrix.platform }}" != "macCatalyst" ]]; then
+          DEVICE_ID=$(xcrun simctl list devices available \
+            | grep "${{ matrix.device }}" \
+            | head -1 \
+            | awk -F'[()]' '{print $(NF-3)}')
+          DEST="${DEST},id=${DEVICE_ID}"
+        fi
+
+        echo "Testing on: $DEST"
+        xcodebuild test \
+          -scheme ShitLib \
+          -destination "$DEST" \
+          -derivedDataPath DerivedData \
+          -enableCodeCoverage YES \
+          -skipPackagePluginValidation
+
     - name: Export coverage report as Lcov
-      run: xcrun llvm-cov export -format="lcov" -instr-profile=.build/x86_64-apple-macosx/debug/codecov/default.profdata .build/x86_64-apple-macosx/debug/ShitLibPackageTests.xctest/Contents/MacOS/ShitLibPackageTests > lcov.info
-    - uses: codecov/codecov-action@v2
+      run: |
+        # Locate profdata and test bundle under DerivedData
+        PROFILE=$(find DerivedData/Build/ProfileData -name "*.profdata" | head -1)
+        TEST_BUNDLE=$(find DerivedData/Build/Products -name "*ShitLibPackageTests.xctest" | head -1)
+        TEST_BINARY="${TEST_BUNDLE}/$(basename "$TEST_BUNDLE" .xctest)"
+
+        if [[ -f "$PROFILE" && -f "$TEST_BINARY" ]]; then
+          echo "Exporting coverage for ${{ matrix.platform }}"
+          xcrun llvm-cov export -format="lcov" \
+            -instr-profile="$PROFILE" \
+            "$TEST_BINARY" > lcov_${{ matrix.platform }}.info
+        else
+          echo "Coverage data not found for ${{ matrix.platform }}"
+        fi
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
       with:
-        files: lcov.info
+        token: ${{ secrets.CODECOV_TOKEN }}
+        files: lcov_${{ matrix.platform }}.info
+        flags: ${{ matrix.platform }}
