@@ -1,5 +1,7 @@
 # ShitLib (oh Shit!)
 
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FShitLib%2Fshitlib-swift%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/ShitLib/shitlib-swift)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2FShitLib%2Fshitlib-swift%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/ShitLib/shitlib-swift)  
 [![Swift CI](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml/badge.svg)](https://github.com/ShitLib/shitlib-swift/actions/workflows/swift.yml?branch=main)
 [![codecov](https://codecov.io/gh/ShitLib/shitlib-swift/branch/main/graph/badge.svg?token=WqSvdoVifd)](https://codecov.io/gh/ShitLib/shitlib-swift)
 [![Join the chat at https://gitter.im/ShitLib/shitlib-swift](https://badges.gitter.im/ShitLib/shitlib-swift.svg)](https://gitter.im/ShitLib/shitlib-swift?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
