@@ -20,16 +20,22 @@ jobs:
         include:
           - platform: "macOS"
             destination: "platform=macOS,arch=arm64"
+            device: "My Mac"
           - platform: "iOS"
             destination: "platform=iOS Simulator"
+            device: "iPhone"
           - platform: "tvOS"
             destination: "platform=tvOS Simulator"
+            device: "Apple TV"
           - platform: "watchOS"
             destination: "platform=watchOS Simulator"
+            device: "Apple Watch"
           - platform: "visionOS"
             destination: "platform=visionOS Simulator"
+            device: "Apple Vision"
           - platform: "macCatalyst"
             destination: "platform=macOS,variant=Mac Catalyst"
+            device: "My Mac"
 
     steps:
     - uses: actions/checkout@v5
@@ -40,7 +46,7 @@ jobs:
         DEST="${{ matrix.destination }}"
         if [[ "${{ matrix.platform }}" != "macOS" && "${{ matrix.platform }}" != "macCatalyst" ]]; then
           DEVICE_ID=$(xcrun simctl list devices available \
-            | grep "${{ matrix.platform }} Simulator" \
+            | grep "${{ matrix.device }} Simulator" \
             | head -1 \
             | awk -F'[()]' '{print $(NF-3)}')
           DEST="${DEST},id=${DEVICE_ID}"
