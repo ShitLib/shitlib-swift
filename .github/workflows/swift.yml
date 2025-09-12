@@ -46,7 +46,7 @@ jobs:
         DEST="${{ matrix.destination }}"
         if [[ "${{ matrix.platform }}" != "macOS" && "${{ matrix.platform }}" != "macCatalyst" ]]; then
           DEVICE_ID=$(xcrun simctl list devices available \
-            | grep "${{ matrix.device }} Simulator" \
+            | grep "${{ matrix.device }}" \
             | head -1 \
             | awk -F'[()]' '{print $(NF-3)}')
           DEST="${DEST},id=${DEVICE_ID}"
