@@ -11,18 +11,67 @@ permissions:
 
 jobs:
   test-and-coverage:
-    name: Test and Coverage
+    name: Test and Coverage (${{ matrix.platform }})
     runs-on: macos-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - platform: "macOS"
+            destination: "platform=macOS,arch=arm64"
+          - platform: "iOS"
+            destination: "platform=iOS Simulator"
+          - platform: "tvOS"
+            destination: "platform=tvOS Simulator"
+          - platform: "watchOS"
+            destination: "platform=watchOS Simulator"
+          - platform: "visionOS"
+            destination: "platform=visionOS Simulator"
+          - platform: "macCatalyst"
+            destination: "platform=macOS,variant=Mac Catalyst"
+
     steps:
     - uses: actions/checkout@v5
-    - uses: maxim-lobanov/setup-xcode@v1
-      with:
-        xcode-version: '26.0-beta'
-    - name: Run tests
-      run: swift test -v --enable-code-coverage
+
+    - name: Run tests on ${{ matrix.platform }}
+      run: |
+        # Determine full destination specifier
+        DEST="${{ matrix.destination }}"
+        if [[ "${{ matrix.platform }}" != "macOS" && "${{ matrix.platform }}" != "macCatalyst" ]]; then
+          DEVICE_ID=$(xcrun simctl list devices available \
+            | grep "${{ matrix.platform }} Simulator" \
+            | head -1 \
+            | awk -F'[()]' '{print $(NF-3)}')
+          DEST="${DEST},id=${DEVICE_ID}"
+        fi
+
+        echo "Testing on: $DEST"
+        xcodebuild test \
+          -scheme ShitLib \
+          -destination "$DEST" \
+          -derivedDataPath DerivedData \
+          -enableCodeCoverage YES
+
     - name: Export coverage report as Lcov
-      run: xcrun llvm-cov export -format="lcov" -instr-profile=.build/arm64-apple-macosx/debug/codecov/default.profdata .build/arm64-apple-macosx/debug/ShitLibPackageTests.xctest/Contents/MacOS/ShitLibPackageTests > lcov.info
-    - uses: codecov/codecov-action@v5
+      run: |
+        # Locate profdata and test bundle under DerivedData
+        PROFILE=$(find DerivedData/Build/ProfileData -name "*.profdata" | head -1)
+        TEST_BUNDLE=$(find DerivedData/Build/Products -name "*ShitLibPackageTests.xctest" | head -1)
+        TEST_BINARY="${TEST_BUNDLE}/$(basename "$TEST_BUNDLE" .xctest)"
+
+        if [[ -f "$PROFILE" && -f "$TEST_BINARY" ]]; then
+          echo "Exporting coverage for ${{ matrix.platform }}"
+          xcrun llvm-cov export -format="lcov" \
+            -instr-profile="$PROFILE" \
+            "$TEST_BINARY" > lcov_${{ matrix.platform }}.info
+        else
+          echo "Coverage data not found for ${{ matrix.platform }}"
+        fi
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v5
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-        files: lcov.info
+        files: lcov_${{ matrix.platform }}.info
+        flags: ${{ matrix.platform }}
