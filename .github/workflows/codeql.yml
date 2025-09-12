@@ -88,7 +88,7 @@ jobs:
       run: |
         xcodebuild \
           -scheme ShitLib build \
-          -destination "platform=macOS,arch=arm64" \
+          -destination "generic/platform=macOS" \
           -skipPackagePluginValidation
 
     - name: Perform CodeQL Analysis
