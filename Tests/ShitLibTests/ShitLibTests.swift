@@ -1,8 +1,11 @@
 //
-//  ShitLibTests.swift
-//  ShitLibTests
+// ShitLibTests.swift - Unit tests
+// This source file is part of the ShitLib open source project
 //
-//  Created by Cristina De Rito on 08/10/2018.
+// Copyright (c) 2018 - 2025 ShitLib
+// Licensed under MIT
+//
+// See https://github.com/ShitLib/shitlib-swift/blob/main/LICENSE for license information
 //
 
 import Testing
