@@ -1,46 +1,64 @@
 //
-//  ShitLib.h
-//  ShitLib
+// OhShit.swift - Enum with all the cases needed to wrap variables and magic numbers
+// This source file is part of the ShitLib open source project
 //
-//  Created by Cristina De Rito on 25/02/2018.
+// Copyright (c) 2018 - 2025 ShitLib
+// Licensed under MIT
+//
+// See https://github.com/ShitLib/shitlib-swift/blob/main/LICENSE for license information
 //
 
+/// Enum with all the cases needed to wrap variables and magic numbers
 public enum OhShit {
+    /// `nil` value placeholder
     public static let osNull: (any Sendable)? = nil
+    /// Empty value placeholder
     public static let osEmpty = ""
 
+    /// `true` placeholder
     public static let osTrue = true
+    /// `false` placeholder
     public static let osFalse = false
 
+    /// `-1` placeholder
     public static let osN1 = -1
+    /// `0` placeholder
     public static let os0 = 0
+    /// `1` placeholder
     public static let os1 = 1
 
-    public static let osN1I64: Int64 = -1
-    public static let os0I64: Int64 = 0
-    public static let os1I64: Int64 = 1
-
+    /// Wraps a value of any type which conforms to `Sendable`.
+    /// - Parameter t: The value you want to wrap
+    /// - Returns: The same value passed as input
     public static func ohShit<T>(_ t: T?) -> T? {
-        return t
+        t
     }
 
+    /// Wraps an `Int` value.
+    /// - Parameter i: The `Int` value you want to wrap
+    /// - Returns: The same value passed as input
     public static func ohShit(_ i: Int?) -> Int? {
-        return i
+        i
     }
 
-    public static func ohShit(_ i: Int64?) -> Int64? {
-        return i
-    }
-
+    /// Wraps a `Character` value.
+    /// - Parameter i: The `Character` value you want to wrap
+    /// - Returns: The same value passed as input
     public static func ohShit(_ i: Character?) -> Character? {
-        return i
+        i
     }
 
+    /// Wraps a `Bool` value.
+    /// - Parameter i: The `Bool` value you want to wrap
+    /// - Returns: The same value passed as input
     public static func ohShit(_ i: Bool?) -> Bool? {
-        return i
+        i
     }
 
+    /// Wraps a `UInt8` value.
+    /// - Parameter i: The `UInt8` value you want to wrap
+    /// - Returns: The same value passed as input
     public static func ohShit(_ i: UInt8?) -> UInt8? {
-        return i
+        i
     }
 }
