@@ -57,7 +57,8 @@ jobs:
           -scheme ShitLib \
           -destination "$DEST" \
           -derivedDataPath DerivedData \
-          -enableCodeCoverage YES
+          -enableCodeCoverage YES \
+          -skipPackagePluginValidation
 
     - name: Export coverage report as Lcov
       run: |
